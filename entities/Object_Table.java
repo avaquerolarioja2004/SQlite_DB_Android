@@ -1,4 +1,4 @@
-package com.example.heroquest.db_sqlite.entities;
+package com.example.heroquest.DataBase.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -15,24 +15,12 @@ public class Object_Table {
     @ColumnInfo(name = "name")
     private String name;
 
-    @ColumnInfo(name = "x")
-    private int x;
-
-    @ColumnInfo(name = "y")
-    private int y;
-
     @ColumnInfo(name = "image_info")
     private byte[] imageInfo;
 
-    @ColumnInfo(name = "covers_visibility")
-    private boolean coversVisibility;
-
-    public Object_Table(String name, int x, int y, byte[] imageInfo, boolean coversVisibility) {
+    public Object_Table(String name, byte[] imageInfo) {
         this.name = name;
-        this.x = x;
-        this.y = y;
         this.imageInfo = imageInfo;
-        this.coversVisibility = coversVisibility;
     }
 
     public int getId() {
@@ -43,20 +31,8 @@ public class Object_Table {
         return name;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
     public byte[] getImageInfo() {
         return imageInfo;
-    }
-
-    public boolean isCoversVisibility() {
-        return coversVisibility;
     }
 
     public void setId(int id) {
@@ -67,25 +43,12 @@ public class Object_Table {
         this.name = name;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public void setImageInfo(byte[] imageInfo) {
         this.imageInfo = imageInfo;
     }
 
-    public void setCoversVisibility(boolean coversVisibility) {
-        this.coversVisibility = coversVisibility;
-    }
-
     @Override
     public String toString() {
-        return id + ";" + name + ";" + x + ";" + y + ";" + Arrays.toString(imageInfo) +
-                ";" + coversVisibility;
+        return id + ";" + name + ";" + Arrays.toString(imageInfo) ;
     }
 }

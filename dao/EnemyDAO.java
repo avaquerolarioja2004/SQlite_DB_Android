@@ -1,12 +1,11 @@
-package com.example.heroquest.db_sqlite.dao;
+package com.example.heroquest.DataBase.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.example.heroquest.db_sqlite.entities.Enemy_Table;
-import com.example.heroquest.db_sqlite.entities.Furniture_Table;
+import com.example.heroquest.DataBase.entities.Enemy_Table;
 
 import java.util.List;
 

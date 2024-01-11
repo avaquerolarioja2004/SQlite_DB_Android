@@ -1,4 +1,4 @@
-package com.example.heroquest.db_sqlite.entities;
+package com.example.heroquest.DataBase.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 @Entity(tableName = "room_table",primaryKeys = {"x","y"})
 public class Room_Table implements Serializable {
@@ -40,5 +41,18 @@ public class Room_Table implements Serializable {
     @Override
     public String toString() {
         return x + ";" + y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room_Table roomTable = (Room_Table) o;
+        return x == roomTable.x && y == roomTable.y || x == roomTable.y && y == roomTable.x;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.heroquest.db_sqlite.entities;
+package com.example.heroquest.DataBase.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
